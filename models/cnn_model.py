@@ -13,7 +13,7 @@ class ConvModel(TensorflowModel):
   EXPECTS_TIME_PARAM = True
 
   def __init__(self, **params):
-    super().__init__(**params)
+    super(ConvModel, self).__init__(**params)
 
     self._time_steps = params.get('time_steps', 10)
     self._features = int(self._features / self._time_steps)  # because features are unrolled
